@@ -1,10 +1,23 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import { Button as BootstrapButton } from "react-bootstrap";
+import { AppContext } from "../../context/context";
 
 const Button = () => {
+  const { state, dispatch } = useContext(AppContext);
+  const { isDisplay } = state;
   return (
     <Fragment>
-      <BootstrapButton variant="primary">charger les albums</BootstrapButton>
+      <BootstrapButton
+        onClick={() => {
+          dispatch({
+            type: "DISPLAY_USERS",
+            payload: state.users,
+          });
+        }}
+        variant={isDisplay ? "success" : "primary"}
+      >
+        {isDisplay ? "Albums chargés!" : "Charger les albums"}
+      </BootstrapButton>
     </Fragment>
   );
 };

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { User, RawUser } from "../interfaces";
 
-export const useGetUsers: () => User[] = () => {
+export const UseGetUsers: () => User[] = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {

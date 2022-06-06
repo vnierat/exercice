@@ -1,10 +1,7 @@
 import React, { Fragment } from "react";
 import { Col, ListGroup, Row } from "react-bootstrap";
-import { useGetUsers } from "../../api/usersList";
 
 const UserCards = () => {
-  const data = useGetUsers();
-  console.log(data);
   return (
     <Fragment>
       <Row>
@@ -13,7 +10,6 @@ const UserCards = () => {
             <ListGroup.Item variant="dark">...</ListGroup.Item>
             <ListGroup.Item>...</ListGroup.Item>
             <ListGroup.Item>...</ListGroup.Item>
-            <ListGroup.Item>...</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col>
@@ -21,13 +17,11 @@ const UserCards = () => {
             <ListGroup.Item variant="dark">...</ListGroup.Item>
             <ListGroup.Item>...</ListGroup.Item>
             <ListGroup.Item>...</ListGroup.Item>
-            <ListGroup.Item>...</ListGroup.Item>
           </ListGroup>
         </Col>
         <Col>
           <ListGroup>
             <ListGroup.Item variant="dark">...</ListGroup.Item>
-            <ListGroup.Item>...</ListGroup.Item>
             <ListGroup.Item>...</ListGroup.Item>
             <ListGroup.Item>...</ListGroup.Item>
           </ListGroup>
