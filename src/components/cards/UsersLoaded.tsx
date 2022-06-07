@@ -21,8 +21,6 @@ const UsersLoaded = () => {
     return albumId;
   };
 
-  console.log(albumId);
-
   return (
     <Fragment>
       <Row>
@@ -36,10 +34,12 @@ const UsersLoaded = () => {
                 .filter(({ userId }) => id === userId)
                 .map(({ title, id }, albumsIndex) => (
                   <ListGroup.Item key={albumsIndex}>
-                    {title}
-                    <Button variant="primary" onClick={() => toggleModal(id)}>
-                      Voir
-                    </Button>
+                    <div className="title-wrapper">
+                      <span>{title}</span>
+                      <Button variant="primary" onClick={() => toggleModal(id)}>
+                        Voir
+                      </Button>
+                    </div>
                   </ListGroup.Item>
                 ))}
             </ListGroup>

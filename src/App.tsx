@@ -10,13 +10,15 @@ import { UseGetUsers } from "./api/usersList";
 function App() {
   const { state } = useContext(AppContext);
 
-  const [stateData] = useState(state);
+  const [stateData, setStateData] = useState(state);
 
   useEffect(() => {
-    console.log(stateData);
+    setStateData(state);
   }, [stateData]);
 
   const { isDisplay } = stateData;
+
+  console.log(stateData);
 
   return (
     <AppProvider>

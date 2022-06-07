@@ -5,7 +5,7 @@ import { UseAGallery } from "../api/galleryList";
 interface UserModalProps {
   albumId: number | null;
   show: boolean;
-  handleClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const UserModal: FC<UserModalProps> = ({ show, handleClose, albumId }) => {
@@ -15,8 +15,8 @@ const UserModal: FC<UserModalProps> = ({ show, handleClose, albumId }) => {
     .filter(({ id }) => id === albumId)
     .map(({ url, title }) => ({ url, title }));
 
-  const albumTitle = pictureProperties[0].title;
-  const albumUrl = pictureProperties[0].url;
+  const albumTitle = pictureProperties[0]?.title;
+  const albumUrl = pictureProperties[0]?.url;
 
   return (
     <Modal show={show} onHide={handleClose}>
@@ -24,7 +24,7 @@ const UserModal: FC<UserModalProps> = ({ show, handleClose, albumId }) => {
         <Modal.Title>{albumTitle}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <img src={albumUrl} alt={`${albumId}`} />
+        <img className="modal-image" src={albumUrl} alt={`${albumId}`} />
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
