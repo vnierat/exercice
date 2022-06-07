@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Button, Col, ListGroup, Row } from "react-bootstrap";
 import { UseAlbums } from "../../api/albumsList";
 import { UseGetUsers } from "../../api/usersList";
-import UserModal from "../../modal/UserModal";
+import UserModal from "../modal/UserModal";
 
 const UsersLoaded = () => {
   const [show, setShow] = useState<boolean>(false);

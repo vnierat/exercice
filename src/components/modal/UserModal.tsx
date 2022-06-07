@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { UseAGallery } from "../api/galleryList";
+import { UseAGallery } from "../../api/galleryList";
 
 interface UserModalProps {
   albumId: number | null;
