@@ -12,17 +12,6 @@ type ActionMap<M extends { [index: string]: any }> = {
       };
 };
 
-//export const actionType = "LOAD_USERS" || "DISPLAY_USERS";
-
-type TYPES =
-  | { type: "LOAD_USERS"; payload: [] }
-  | { type: "DISPLAY_USERS"; payload: [] };
-
-/* export enum TYPES {
-  LOAD_USERS = "LOAD_USERS",
-  DISPLAY_USERS = "DISPLAY_USERS",
-} */
-
 type UsersPayload = {
   ["LOAD_USERS"]: RawUser[];
   ["DISPLAY_USERS"]: RawUser[];

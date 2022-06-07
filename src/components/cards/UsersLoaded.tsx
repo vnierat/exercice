@@ -25,7 +25,7 @@ const UsersLoaded = () => {
     <Fragment>
       <Row>
         {usersData.map(({ id, username }, index) => (
-          <Col md={4} key={index}>
+          <Col md={4} style={{ marginBottom: "25px" }} key={index}>
             <ListGroup>
               <ListGroup.Item variant="dark">
                 <h3>{username}</h3>

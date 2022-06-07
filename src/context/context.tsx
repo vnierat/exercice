@@ -5,8 +5,8 @@ import React, {
   Dispatch,
   FC,
   useEffect,
+  useContext,
 } from "react";
-import { useSelector } from "react-redux";
 import { RawUser } from "../interfaces";
 import { LoadUsersActions, loadUsersReducer } from "./reducer";
 
@@ -30,9 +30,8 @@ const AppContext = createContext<{
   dispatch: () => null,
 });
 
-const mainReducer = (data: InitialStateType, action: LoadUsersActions) => ({
-  data: loadUsersReducer(data, action),
-});
+const mainReducer = (state: InitialStateType, action: LoadUsersActions) =>
+  loadUsersReducer(state, action);
 
 const AppProvider: FC = ({ children }) => {
   const [state, dispatch] = useReducer(mainReducer, initialState as never);
@@ -49,4 +48,5 @@ const AppProvider: FC = ({ children }) => {
     </AppContext.Provider>
   );
 };
+
 export { AppProvider, AppContext };

@@ -1,38 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
-import DefaultButton from "./components/button/Button";
-import UserCards from "./components/cards/UserCardsPlaceHolder";
-import { AppContext, AppProvider } from "./context/context";
-import UsersLoaded from "./components/cards/UsersLoaded";
-import { UseGetUsers } from "./api/usersList";
+import React from "react";
+import ReadContext from "./components/ReadContext";
+import { AppProvider } from "./context/context";
 
 function App() {
-  const { state } = useContext(AppContext);
-
-  const [stateData, setStateData] = useState(state);
-
-  useEffect(() => {
-    setStateData(state);
-  }, [stateData]);
-
-  const { isDisplay } = stateData;
-
-  console.log(stateData);
-
   return (
     <AppProvider>
-      <main className="main">
-        <Jumbotron fluid>
-          <Container fluid="md">
-            <h1 className="mb-5">Keep calm, take a deep breath...</h1>
-            <DefaultButton />
-          </Container>
-        </Jumbotron>
-        <Container fluid="md">
-          {!isDisplay ? <UsersLoaded /> : <UserCards />}
-        </Container>
-      </main>
+      <ReadContext />
     </AppProvider>
   );
 }
